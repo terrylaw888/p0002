@@ -1,0 +1,18 @@
+library(ggplot2)
+library(stargazer)
+
+wineRaw <- read.csv("wineQualityReds.csv")
+wineRaw2 <- wineRaw[,-1]
+pdf("vs_quality_plots.pdf")
+print(qplot(fixed.acidity, y = quality, data = wineRaw2))
+print(qplot(volatile.acidity, y = quality, data = wineRaw2))
+print(qplot(citric.acid, y = quality, data = wineRaw2))
+print(qplot(residual.sugar, y = quality, data = wineRaw2))
+print(qplot(chlorides, y = quality, data = wineRaw2))
+print(qplot(free.sulfur.dioxide, y = quality, data = wineRaw2))
+print(qplot(total.sulfur.dioxide, y = quality, data = wineRaw2))
+print(qplot(density, y = quality, data = wineRaw2))
+print(qplot(pH, y = quality, data = wineRaw2))
+print(qplot(sulphates, y = quality, data = wineRaw2))
+print(qplot(alcohol, y = quality, data = wineRaw2))
+dev.off()
